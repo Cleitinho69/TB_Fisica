@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IrradiaçãoMD</title>
+</head>
+<link rel="stylesheet" href="style.css">
+
+<body>
+    <!-- animação 3D -->
+    <canvas></canvas>
+    <!-- aqui é onde vai ficar o menu de navegação da pagina -->
+    <menu>
+        <!-- links de navegação -->
+        <nav></nav>
+        <nav></nav>
+        <nav></nav>
+        <nav></nav>
+        <nav></nav>
+    </menu>
+    <!-- conteudo da pagina -->
+    <article>
+
+        <!-- calculos -->
+        <div class="calculo">
+            <div>
+                <label for="edtSombra">Tamanho da Sombra:</label>
+                <input type="number" id="edtSombra" name="edtSombra" maxlength="3">
+            </div>
+
+            <div>
+                <label for="edtAltura">Altura do Gnômun:</label>
+                <input type="number" name="edtAltura" id="edtAltura" maxlength="3" max="100">
+            </div>
+
+            <div>
+                <label for="edtIrradiação">Irradiaçâo Solar:</label>
+                <input type="number" name="edtIrradiacao" id="edtIrradiacao" maxlength="7">
+            </div>
+            
+            <button id="btnCalc">Calcular</button>
+            
+            <div id="result"></div>
+        </div>
+
+        <!-- aqui vai falar sobre a luz -->
+        <div></div>
+
+        <!-- aqui vai falar sobre a irradiação -->
+        <div></div>
+
+        <!-- aqui vai falar sobre o angulo -->
+        <div></div>
+
+        <!-- e aqui vai explicar como se mede -->
+        <div></div>
+
+        <!-- script para animações de scroll -->
+        <script src="script.js"></script>
+        <!-- script para a animação 3D, !!!""""NÃO MEXA""""!!! -->
+        <script type="module" src="script3D.js"></script>
+    </article>
+</body>
+
+</html>
