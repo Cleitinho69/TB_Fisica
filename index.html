@@ -17,6 +17,7 @@
 <link rel="stylesheet" href="style.css">
 
 <body>
+    <!-- aqui é onde vai ficar o menu de navegação da pagina -->
     <menu>
         <!-- links de navegação -->
         <nav>
@@ -43,11 +44,17 @@
     </menu>
     <!-- animação 3D -->
     <canvas id="canvas"></canvas>
-    <!-- <div id="Horas" class="flex-center">
-        <input type="number">
-    </div> -->
+    <div class="flex-center" id="horas">
+        <button>06:00</button>
+        <button>08:00</button>
+        <button>10:00</button>
+        <button>12:00</button>
+        <button>14:00</button>
+        <button>16:00</button>
+        <button>18:00</button>
+        <button>19:00</button>
+    </div>
     <div id="resultAncora"></div>
-    <!-- aqui é onde vai ficar o menu de navegação da pagina -->
     <!-- conteudo da pagina -->
     <article>
         <!-- Resultado dos calculos -->
@@ -136,8 +143,13 @@
             <br><br>
             <p><p id="espaço"></p>O ângulo de inclinação consiste num parâmetro importante pois influência na absorção da irradiação solar
                 direta, e na reflexão da irradiação incidente na superfície do módulo, ou seja, interfere de forma
-                direta na produção de energia elétrica e, consequentemente, no desempenho do sistema.</p>
+                direta na produção de energia elétrica e, consequentemente, no desempenho do sistema.
+            </p>
                 <img src="img/angulo.webp" alt="" srcset="">
+            <br><br>
+            <h3>O que é um gnômon?</h3>
+            <br><br>
+            <p><p id="espaço"></p>O gnômon é um instrumento astronômico que consiste numa haste vertical que projeta uma sombra, permitindo a determinação de referências temporais e espaciais</p>
         </div>
 
         <!-- e aqui vai explicar como se mede -->
@@ -158,6 +170,12 @@
             </p>
         </div>
 
+        <div id="mpSombra" class="flex-center">
+            <br><br>
+            <h1>Mapa de Sombra:</h1>
+            <br><br>
+            <img src="img/WhatsApp Image 2024-09-04 at 21.22.12.jpeg" alt="">
+        </div>
         <!-- script para animações de scroll -->
         <script src="script.js"></script>
         <!-- script para a animação 3D, !!!""""NÃO MEXA""""!!! -->
@@ -167,7 +185,7 @@
     <div id="bloco"></div>
 
     <footer class="flex-center">
-        <nav class="flex-center">
+        <nav>
             <a href="#canvas">Voltar para o Inicio</a>
         </nav>
     </footer>
