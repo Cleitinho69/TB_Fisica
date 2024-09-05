@@ -1,66 +1,110 @@
-*{
+* {
     padding: 0;
     margin: 0;
 }
-/* 
-canvas{
-    width: 100vw;
-    height: 100vh;
-} */
 
-menu{
-    display: flex;
-    justify-content: space-around;
-    height: 50px;
-    border: 1px solid black;
-}
-nav{
-    width: 15%;
-    height: 100%;
-    border: 1px solid rgb(201, 15, 15);
+@font-face{
+  font-family: 'font1';
+  src: url('fonte/Type\ Machine.ttf');
 }
 
+html,
+body {
+  font-size: 24px;
+  font-family: 'font1';
+    background-color: rgb(220, 225, 235);
+    scroll-behavior: smooth;
+  width: 100%;
+  height: 100%;
+}
+
+canvas {
+  margin: 120px 1%;
+  width: 97.5%;
+  height: 95%;
+  border-radius: 20px;
+  border: 3px solid black;
+  background-color: rgb(233, 233, 233);
+}
+
+/* estilização do menu */
+menu {
+  position: fixed;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 100px;
+  background-color: #1b86eb;
+  border: 1px solid black;
+  z-index: 2;
+}
+nav {
+  position: sticky;
+  background-color: #1b86eb;
+  width: 15%;
+  height: 100%;
+  font-size: 90%;
+}
+nav:hover {
+  font-size: 20px !important;
+  box-shadow: inset 0 0 10px 2px #215b92;
+}
+
+a {
+  position: sticky;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  padding: 10px;
+  cursor: pointer;
+}
+
+article {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
 /* apenas a parte de calculos */
-.calculo{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-top: 50px;
-    width: 800px;
-    margin-left: 50%;
-    transform: translateX(-50%);
+.calculo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 50px;
+  width: 800px;
+  margin-left: 50vw;
+  transform: translateX(-25vw);
 }
-.calculo div{
-    text-align: center;
-}
-
-.calculo input{
-    position: relative;
-    outline: none;
-    border: none;
-    border-bottom: 2px solid black;
-    text-align: center;
-    width: 100%;
-    height: 100%;
-    font-size: 16px;
-    cursor: pointer;
+.calculo div {
+  text-align: center;
 }
 
-#edtIrradiacao{
-    width: 80%;
-    margin-right: 4vw;
+.calculo input {
+  position: relative;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid black;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  cursor: pointer;
+  background: transparent;
 }
 
-input[type=number]::-webkit-inner-spin-button{
-    appearance: none;
+#edtIrradiacao {
+  width: 80%;
+  margin-right: 4vw;
 }
 
-.calculo label{
-    position: absolute;
-    cursor: pointer;
-    pointer-events: none;
-    color: rgba(5, 4, 4, 0.514);
-    z-index: 1;
+input[type="number"]::-webkit-inner-spin-button {
+  appearance: none;
+}
+
+.calculo label {
+  position: absolute;
+  cursor: pointer;
+  pointer-events: none;
+  font-size: 18px;
+  color: rgba(5, 4, 4, 0.514);
 }
 /* .calculo label::before{
     content: '';
@@ -69,22 +113,106 @@ input[type=number]::-webkit-inner-spin-button{
     border: 1px solid black;
     position: absolute;
 } */
-.active{
-    color: black !important;
-    transform: translatey(-15px);
-    transition: transform 0.2s linear;
+.active {
+  color: black !important;
+  transform: translatey(-15px);
+  transition: transform 0.2s linear;
 }
 
-#btnCalc{
-    border: 0;
-    margin-left: 50%;
-    margin-top: 5%;
-    transform: translateX(-70%);
-    border-radius: 15px;
-    font-size: 30px;
-    width: 300px;
-    height: 70px;
+#btnCalc {
+  border: 0;
+  margin-left: 50%;
+  margin-top: 5%;
+  transform: translateX(-70%);
+  border-radius: 15px;
+  font-size: 30px;
+  width: 300px;
+  height: 70px;
+  background-color: #5fb1ff;
 }
-#btnCalc:hover{
-    background-color: aqua;
+#btnCalc:hover {
+  background-color: #1b86eb;
+}
+
+#resultado {
+  justify-content: flex-end;
+  height: 60px;
+  width: 400px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  margin-left: 50vw;
+  transform: translateX(-25vw);
+  font-size: 25px;
+  box-shadow: 0 0 2px 2px #1b86eb;
+  background-color: #5fb1ff;
+  border-radius: 20px;
+ 
+}
+#resultado p {
+  margin-left: 3%;
+  margin-right: 5%;
+  border-radius: 10px;
+  height: 40px;
+  width: 60%;
+  background-color: rgba(255, 255, 255, 0.911);
+}
+
+/* Configuração do texto da luz */
+.texto {
+  text-align: justify;
+  margin-top: 200px;
+  width: 50vw;
+}
+
+footer {
+  margin-top: 10%;
+  height: 50px;
+  width: 100%;
+  background-color: #1b86eb;
+}
+footer nav {
+  font-size: 26px;
+  width: 300px !important;
+}
+
+/* Centralizar os itens com o display flex */
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes anima{
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+#espaço{
+  margin-left: 60px;
+}
+
+p{
+  text-align: justify;
+  display: inline-block;
+}
+img{
+  text-align: center;
+  width: 100%;
+  margin-top: 30px;
+    margin-bottom: 30px;
+    display: block;
+}
+
+#horas{
+  color: black;
+  z-index: 1;
+}
+
+.link{
+  color: blue;
+  text-decoration: inherit !important;
 }

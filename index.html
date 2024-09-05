@@ -5,24 +5,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IrradiaçãoMD</title>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.168.0/build/three.module.js",
+                "OrbitControls": "https://unpkg.com/three@0.168.0/examples/jsm/controls/OrbitControls.js"
+            }
+        }
+    </script>
 </head>
 <link rel="stylesheet" href="style.css">
 
 <body>
-    <!-- animação 3D -->
-    <canvas></canvas>
-    <!-- aqui é onde vai ficar o menu de navegação da pagina -->
     <menu>
         <!-- links de navegação -->
-        <nav></nav>
-        <nav></nav>
-        <nav></nav>
-        <nav></nav>
-        <nav></nav>
+        <nav>
+            <a href="#resultAncora">Calculo</a>
+        </nav>
+        <nav>
+            <a href="#txtLuz">O que é a luz</a>
+        </nav>
+        <nav>
+            <a href="#txtIrradiacao">
+                Irradiação Solar
+            </a>
+        </nav>
+        <nav>
+            <a href="#txtAngulo">
+                Ângulo
+            </a>
+        </nav>
+        <nav>
+            <a href="#txtExplicacao">
+                Como medir a irradiação
+            </a>
+        </nav>
     </menu>
+    <!-- animação 3D -->
+    <canvas id="canvas"></canvas>
+    <!-- <div id="Horas" class="flex-center">
+        <input type="number">
+    </div> -->
+    <div id="resultAncora"></div>
+    <!-- aqui é onde vai ficar o menu de navegação da pagina -->
     <!-- conteudo da pagina -->
     <article>
-
+        <!-- Resultado dos calculos -->
+        <div id="resultado" class="flex-center">
+            Resultado:
+            <p class="flex-center"></p>
+        </div>
         <!-- calculos -->
         <div class="calculo">
             <div>
@@ -39,29 +71,107 @@
                 <label for="edtIrradiação">Irradiaçâo Solar:</label>
                 <input type="number" name="edtIrradiacao" id="edtIrradiacao" maxlength="7">
             </div>
-            
+
             <button id="btnCalc">Calcular</button>
-            
+
             <div id="result"></div>
         </div>
 
         <!-- aqui vai falar sobre a luz -->
-        <div></div>
+        <div id="txtLuz"></div>
+        <div class="texto" id="luz">
+            <h1>O que é a luz?</h1>
+            <br>
+            <p><p id="espaço"></p>A luz é uma energia radioativa visivel (dependendo do seu aspectro) que no caso terrestre, tem o sol como
+                maior fonte de luz. Ela se propaga por ondas eletromagnéticas sem precisar de um meio físico. Essas
+                ondas se propagam pelo espaço em uma velocidade absurda (1.079.252.848,8 km/h) até chegarem em na
+                atmosfera, onde ela é refletida, iluminando tudos os cantos possiveis, e por fim em nossas retinas, o
+                que nos permite enchergar a luz, mas isso só é possível também porque o aspectro da luz é formada por
+                várias cores, e cada onda tem sua frequência e comprimento de onda.
+                <br><br>
+                <img src="img/ondaLuz.jpg" alt="" srcset="">
+
+                <p id="espaço"></p>A luz é feita de fótons, que são particulas elementares da luz (elas não tem massa, mas tem muita
+                energia) mediadoras da força de luz eletromagnéticas. Apesar de não ter massa nula, a luz é incapaz de
+                atravessar a matéria, e é isso que formam as sombras. Como a luz não atravessa, não chega luz atrás do
+                objeto. Quando a mesma atinge um corpo, ela é refletida para outros pontos em um caminho linear, já que
+                a luz não faz curva (exceto, claro, a curva do espaço-tempo).
+            </p>
+            <img src="img/luz.jfif" alt="" srcset="">
+
+        </div>
 
         <!-- aqui vai falar sobre a irradiação -->
-        <div></div>
+        <div id="txtIrradiacao"></div>
+        <div class="texto">
+            <h1>O que é a Irradiaçâo Solar?</h1>
+            <br><br>
+            <p><p id="espaço"></p>A irradiação é o processo onde a energia é emitida e propagada na forma de ondas eletromagnéticas sem a
+                necessidade de um material para ocorrer.
+                E por sua vez, ela é a única forma de propagação no vácuo.
+            </p>
+            <p>
+                <p id="espaço"></p>Ela pode ocorrer de forma natural, como por exemplo o aquecimento da Terra pelo Sol, ou induzida como em
+                tratamentos médicos que usam radiação e luzes infravermelho.
+            </p>
+            <img src="img/irradiacao.gif" alt="" srcset="">
+            <p>
+                <p id="espaço"></p>Vale lembrar que nem todas as ondas eletromagnéticas transportam calor, como as ondas de radio ou a luz
+                visível. As ondas próximas do infravermelho são mais eficientes para a transferência de calor do que as
+                outras demais. Além disso, a maneira como as ondas eletromagnéticas interagem com a matéria depende da
+                sua frequência.
+            </p>
+            <p>
+                <p id="espaço"></p>Outra coisa que é importante salientar é que, a radiação e a irradiação apesar de estarem
+                intrinsecamente relacionadas, elas possuem diferenças. A radiação diz respeito a transmissão de energia
+                através do espaço, já a irradiação trata da exposição dessa radiação, como por exemplo a Terra que está
+                exposta a radiação solar.
+            </p>
+        </div>
 
         <!-- aqui vai falar sobre o angulo -->
-        <div></div>
+        <div id="txtAngulo"></div>
+        <div class="texto">
+            <h1>Por que o angulo é importante?</h1>
+            <br><br>
+            <p><p id="espaço"></p>O ângulo de inclinação consiste num parâmetro importante pois influência na absorção da irradiação solar
+                direta, e na reflexão da irradiação incidente na superfície do módulo, ou seja, interfere de forma
+                direta na produção de energia elétrica e, consequentemente, no desempenho do sistema.</p>
+                <img src="img/angulo.webp" alt="" srcset="">
+        </div>
 
         <!-- e aqui vai explicar como se mede -->
-        <div></div>
+        <div id="txtExplicacao"></div>
+        <div class="texto">
+            <h1>Como medir a irradiação?</h1>
+            <br><br>
+            <p<p id="espaço"></p>Para realizar o cálculo da Irradiação incidente é necessário descobrir a radiação solar usando um <a class="link" href="https://play.google.com/store/apps/details?id=solarradiationmeter.orjasolution.app&hl=pt&pli=1">medidor externo</a> e o ângulo formado pela sombra do gnomon e sua altura, descobrindo a hipotenusa para usar a fórmula do
+                cosseno para então descobrir o ângulo:
+                <br><br>
+                tan θ = cateto oposto/cateto adjacente
+                <br><br>
+                O valor obtido é verificado na <a class="link" href="https://www.todamateria.com.br/tabela-trigonometrica/">tabela trigonométrica</a>.
+                <br><br>
+                Após todo esse processo, é usado a fórmula:
+                <br><br>
+                Irradiação incidente = radiação solar * tan θ (Tangente do ângulo encontrado)
+            </p>
+        </div>
 
         <!-- script para animações de scroll -->
         <script src="script.js"></script>
         <!-- script para a animação 3D, !!!""""NÃO MEXA""""!!! -->
         <script type="module" src="script3D.js"></script>
     </article>
+
+    <div id="bloco"></div>
+
+    <footer class="flex-center">
+        <nav class="flex-center">
+            <a href="#canvas">Voltar para o Inicio</a>
+        </nav>
+    </footer>
+
 </body>
 
 </html>

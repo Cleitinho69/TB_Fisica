@@ -1,44 +1,52 @@
 // funcionalidades da parte de calcular
-const btnCalc = document.querySelector('#btnCalc');
-const inputs = [...document.querySelectorAll('input')];
+const btnCalc = document.querySelector("#btnCalc");
+const inputs = [...document.querySelectorAll("input[type=number]")];
+const navs = [...document.querySelectorAll("nav")];
+const body = document.querySelector('body');
 
-inputs.map((el)=>{
-    // aqui serve para deixar a label no centro do input
-    el.previousElementSibling
-    .style.left = el.offsetLeft + 27 + "px";
+// implementar o display flex nos nav
+navs.map((el) => {
+  el.classList.add("flex-center");
+});
 
-    el.previousElementSibling.style.top = el.offsetTop - 5 + "px";
+inputs.map((el) => {
 
-    // parte da ação após o click nos inputs
-    el.addEventListener('click', () => {
-        let label = el.previousElementSibling;
-        label.classList.add('active');
+  // aqui serve para deixar a label no centro do input
+  el.previousElementSibling.style.left = el.offsetLeft + 5 + "px";
 
-        el.clientWidth
-    });
+  el.previousElementSibling.style.top = el.offsetTop - 2 + "px";
 
+  // parte da ação após o click nos inputs
+  el.addEventListener("click", () => {
+    let label = el.previousElementSibling;
+    label.classList.add("active");
 
-    el.addEventListener("focusout",()=>{
-        let label = el.previousElementSibling;
+    el.clientWidth;
+  });
 
-        setTimeout(()=>{
-            if(el.value == ""){
-                label.classList.remove('active');
-            }
-        },200)
-    })
+  el.addEventListener("focusout", () => {
+    let label = el.previousElementSibling;
+
+    setTimeout(() => {
+      if (el.value == "") {
+        label.classList.remove("active");
+      }
+    }, 200);
+  });
 });
 
 // funcionalidades do botão calcular
-btnCalc.addEventListener('click', () => {
+btnCalc.addEventListener("click", () => {
+  const MostResult = document.querySelector("#resultado p");
   let AltGnomun = inputs[1].value;
   let TamSombra = inputs[0].value;
   let IrSolar = inputs[2].value;
 
-  tan = AltGnomun/TamSombra;
+  tan = AltGnomun / TamSombra;
 
-  angulo=Math.round(Math.atan(tan) * 180 / Math.PI);
+  angulo = Math.round((Math.atan(tan) * 180) / Math.PI);
 
-  result = angulo*IrSolar;
-  console.log(result)
-})
+  result = angulo * IrSolar;
+
+  MostResult.textContent = `${result} W/M²`;
+});
